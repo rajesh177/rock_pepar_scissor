@@ -1,0 +1,55 @@
+import random
+l = ['rock', 'paper', 'scissors']
+
+while True:
+  ccount = 0
+  ucount = 0
+  uc = int(input('''Play Game
+  1.Play
+  2.exit'''))
+
+  if uc == 1:
+    for i in range(1,6):
+      UserInput = int(input('''
+      1.rock
+      2.pepar
+      3.scissors'''))
+
+      if UserInput == 1:
+        uchoice = "rock"
+      elif UserInput == 2:
+        uchoice = "paper"
+      else:
+        uchoice = "scissors"
+      Choice = random.choice(l)
+      if uchoice == Choice:
+        print("Drow")
+        print("user choice:-",uchoice)
+        print("Computer choice",Choice)
+        ucount += 1
+        ccount += 1
+      elif uchoice == "rock" and Choice == "scissor" or uchoice == "paper" and Choice == "rock" or uchoice == "scissor" and Choice == "pepar":
+        print("user win win")
+        print("user choice:-",uchoice)
+        print("Computer choice",Choice)
+        ucount += 1
+      else:
+        print("Computer win win")
+        print("user choice:-",uchoice)
+        print("Computer choice",Choice)
+        ccount += 1
+    if ucount > ccount:
+      print("User win the game")
+      print("user choice:-",ccount)
+      print("Computer choice",ccount)
+    elif ucount < ccount:
+      print("Computer win the game")
+      print("user choice:-",ccount)
+      print("Computer choice",ccount)
+    else:
+      print("Game Drow")
+      print("user choice:-",ccount)
+      print("Computer choice",ccount)
+  else:
+    break
+
